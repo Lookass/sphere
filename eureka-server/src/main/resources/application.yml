@@ -1,0 +1,19 @@
+# Core application configuration
+server:
+  port: ${PORT:8761} #Default 8761 port if not set at app execution (--server.port=9000)
+
+# Eureka configuration
+eureka:
+  name: discovery-service
+  region: default
+  preferSameZone: true
+  shouldUseDns: false
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false #We are telling the built-in Eureka Client not to register with �itself�, because our application should be acting as a server
+    fetchRegistry: false      # Those two parameters are used when we want to work in a Cluster mode with more than one Eureka Server
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  numberRegistrySyncRetries: 0 # **LOCAL DEV** Default server behaviour to search for peers to sync up and retries when it finds no available peers is 3 min
+  waitTimeInMsWhenSyncEmpty: 0 # **LOCAL DEV** By default, starting the instance will wait for 5 mins
