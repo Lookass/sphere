@@ -7,7 +7,7 @@
 	<artifactId>sphere</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>E-Sphere</name>
+	<name>sphere</name>
 	<description>Brand Reputation Manager</description>
 
 	<parent>
@@ -64,6 +64,7 @@
 	</build>
 
 	<modules>
-		<module>eureka-server</module>
+		<module>discovery-server</module>
+		<module>config-server</module>
 	</modules>
 </project>
