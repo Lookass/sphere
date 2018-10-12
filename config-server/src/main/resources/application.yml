@@ -1,7 +1,11 @@
 server:
-  port: 9001
+  port: ${PORT:0}
 
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     region: default
     registryFetchIntervalSeconds: 5
@@ -14,4 +18,13 @@ spring:
       server:
         git:
           uri: https://github.com/Lookass/sphere-config-repo.git
-          cloneOnStart: true
+          #cloneOnStart: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #<2>
+  endpoint:
+    health:
+      show-details: ALWAYS

@@ -21,3 +21,12 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   numberRegistrySyncRetries: 0 # **LOCAL DEV** Default server behaviour to search for peers to sync up and retries when it finds no available peers is 3 min
   waitTimeInMsWhenSyncEmpty: 0 # **LOCAL DEV** By default, starting the instance will wait for 5 mins
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

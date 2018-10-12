@@ -3,13 +3,7 @@ server:
 
 spring:
   application:
-    name: location-service
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        serviceId: config-server
-    fail-fast: true
+    name: admin-server
 
 eureka:
   instance:
@@ -26,7 +20,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*" # property used to expose all actuator endpoints
+        include: "*"
   endpoint:
     health:
       show-details: ALWAYS

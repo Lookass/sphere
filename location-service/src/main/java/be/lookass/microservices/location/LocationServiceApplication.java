@@ -21,7 +21,7 @@ public class LocationServiceApplication {
 		SpringApplication.run(LocationServiceApplication.class, args);
 	}
 
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/welcome")
 	public String welcomeText() {
 		return welcomeMessage;
 	}
