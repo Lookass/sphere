@@ -14,3 +14,4 @@ spring:
       server:
         git:
           uri: https://github.com/Lookass/sphere-config-repo.git
+          cloneOnStart: true
